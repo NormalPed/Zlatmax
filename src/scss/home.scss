@@ -382,3 +382,169 @@
 }
 
 //========================================================================================================================================================
+
+.hit-products{
+    @include adaptiveValue("padding-top", 50, 40);
+    @include adaptiveValue("padding-bottom", 120, 40);
+}
+
+//========================================================================================================================================================
+
+.articles-module {
+    @include adaptiveValue("margin-bottom", 120, 40);
+    &__container {
+    }
+
+    &__title {
+        font-size: rem(30);
+        line-height: math.div(46,30);
+        font-weight: 700;
+        letter-spacing: 0.05em;
+        &:not(:last-child) {margin-bottom: em(30,30);}
+    }
+
+    &__items {
+        display: grid;
+        gap: rem(30);
+        grid-template-columns: repeat(auto-fit, minmax(rem(290), 1fr));
+    }
+
+    &__item {
+    }
+}
+.item-article {
+    background-color: #FFF;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: box-shadow 0.3s ease 0s;
+    @media (any-hover: hover){
+        &:hover{
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2); 
+        }
+    }
+    &__image-ibg {
+        padding-bottom: percent(200,376);
+    }    
+    &__body {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        @include adaptiveValue("padding", 25, 15);
+    }
+
+    &__title {
+        flex: 1 1 auto;
+        &:not(:last-child) {margin-bottom: em(16, 20);}
+    }
+
+    &__link-title {
+        font-weight: 600;
+        font-size: rem(20);
+        line-height: math.div(34,20);
+        @media (any-hover: hover){
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__date {
+        color: #ababaa;
+        font-size: rem(16);
+        line-height: math.div(24, 16);
+    }
+}
+//========================================================================================================================================================
+
+.products-block {
+    @include adaptiveValue("margin-bottom", 120, 40);
+    &__container {
+        display: grid;
+        gap: rem(30);
+        @media (min-width:$mobileSmall){
+            grid-template-columns: repeat(auto-fit, minmax(rem(600),1fr));
+        }
+    }
+
+    &__item {
+    }
+}
+.product-block {
+    overflow: hidden;
+    box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+    position: relative;
+    min-height: rem(290);
+    transition: box-shadow 0.3s ease 0s;
+    @media (any-hover: hover){
+        &:hover{
+            box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+        }
+    }
+    &__body {
+        position: relative;
+        z-index: 2;
+        @include adaptiveValue("padding", 30, 20);
+    }
+
+    &__title {
+        &:not(:last-child) {margin-bottom: em(30, 24);}
+    }
+
+    &__text{
+        font-size: rem(18);
+        line-height: math.div(27,18);
+        &:not(:last-child) {margin-bottom: em(46, 18);}
+        @media (min-width: em(710)){
+            max-width: rem(265);
+        }
+    }
+
+    &__link-title {
+        font-size: rem(24);
+        font-weight: 600;
+        line-height: math.div(34,24);
+        display: inline-block;
+        &::after{
+            content:'';
+            width: rem(70);
+            height: rem(2);
+            display: block;
+            margin: rem(15) 0px 0px 0px;
+            background-color: $mainOrange;
+            transition: width 0.8s ease 0s;
+        }
+        @media (any-hover: hover){
+            &:hover{
+                &::after{
+                    width: 100%;                   
+                }
+            }
+        }
+    }
+
+    &__image {
+        width: 100%;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+        transform: translate(0px,8%);
+        img{
+            max-width: 100%;
+        }
+        @media (min-width: em(710)){
+            position: absolute;
+            height: 100%;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    &__button{
+        @media (max-width: em(710)){
+            width: 100%;
+        }
+    }
+}
