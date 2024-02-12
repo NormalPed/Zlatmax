@@ -6,8 +6,79 @@
     <title>Document</title>
 </head>
 <body>
-    <a href="home.html">Home</a>
-    <a href="catalog.html">Catalog</a>
-    <a href="product.html">Product Card</a>
+    <div class="container">
+        <div class="report">
+            <h1 class="main-title">Верстка «NEW_PROJECT_NAME»</h1>
+            <h2 class="topic-title">Готові сторінки:</h2>
+            <ol class="rootpage__list">
+                <li class="link"><a target="_blank" href="home.html">Home</a></li>
+                <li class="link"><a target="_blank" href="catalog.html">Catalog</href=></li>
+                <li class="link"><a target="_blank" href="product.html">Product Card</a></li>
+            </ol>
+        </div>
+    </div>   
 </body>
+<style>
+    @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Montserrat:regular,700&display=swap");
+* ,*::before, *::after {
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    box-sizing: border-box; 
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 320px;
+    width: 100%;
+    background-color: #cdeaf3;
+}
+body {
+    font-family: Montserrat;
+    font-size: 100%;
+    line-height: 1;
+    font-size: 1rem;
+}
+a {
+    text-decoration: underline;
+    color: #0400ff;
+    font-weight: 700;
+}
+
+a:visited {
+    text-decoration: underline;
+    color: #0400ff;
+}
+    a:hover {
+    text-decoration: none;
+}
+ul li {
+    list-style: none;
+}
+.container{
+    min-width: 100%;
+    min-height: 100%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.report{
+    padding: 30px 50px 50px 50px;
+    border-radius: 30px;
+    background-color: #fff;
+    border: 2px solid #000;
+}
+.main-title:not(:last-child){
+    margin-bottom: 30px;
+    border-bottom: 3px solid #000;
+}
+.topic-title:not(:last-child){
+    margin-bottom: 20px;
+}
+.link:not(:last-child){
+    margin-bottom: 5px;
+}
+</style>
 </html>
